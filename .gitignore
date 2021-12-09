@@ -3,6 +3,6 @@ local/**
 **/.vs/*
 /obj/**
 
-Templates/MultiProject/**
 Templates/SingleProject/TailBlazorPages/**
-Templates/SingleProject/TailBlazorServer/**
+**/.vscode/*
+Templates/MultiProject/**
