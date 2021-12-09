@@ -1,0 +1,8 @@
+*.nupkg
+local/**
+**/.vs/*
+/obj/**
+
+Templates/Full/**
+Templates/Minimal/TailBlazorPages/**
+Templates/Minimal/TailBlazorServer/**

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html class="h-full">
+  <script src="InitializeDarkMode.js"></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>TailBlazorWasm</title>
+    <base href="/" />
+    <link rel="icon" href="awesome.svg" />
+    <link href="css/TailBlazorWasm.min.css" rel="stylesheet" />
+  </head>
+
+  <body class="h-full">
+    <div
+      id="app"
+      class="
+        h-full
+        m-0
+        transition-colors
+        duration-400
+        ease-in-out
+        bg-neutral-50
+        dark:bg-neutral-900
+      "
+    >
+      <div class="flex h-full">
+        <div
+          style="
+            background-image: repeating-conic-gradient(
+              #539ffd 0 12deg,
+              #0576f8 12deg 24deg
+            );
+          "
+          class="rounded-full flex w-24 h-24 m-auto animate-spin"
+        >
+          <p class="absolute w-full h-full p-3 rounded-full hover:scale-110">
+            <img src="awesome.svg" />
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="blazor-error-ui">
+      An unhandled error has occurred.
+      <a href="" class="reload">Reload</a>
+      <a class="dismiss">🗙</a>
+    </div>
+    <script src="_framework/blazor.webassembly.js"></script>
+  </body>
+</html>
