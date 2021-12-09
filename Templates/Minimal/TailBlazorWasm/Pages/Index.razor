@@ -1,6 +1,6 @@
 ﻿@page "/"
 
-<PageTitle>TailBlazor</PageTitle>
+<PageTitle>TailBlazor-Wasm</PageTitle>
 
 <div class="m-auto h-full py-8 
             prose prose-sm sm:prose md:prose-md lg:prose-lg xl:prose-xl 2xl:prose-2xl
@@ -10,7 +10,7 @@
         What is TailBlazor ?
     </h2>
 
-    <div class="pb-8"><span class="font-semibold italic pr-2">Tailwind + Blazor, clearly</span> 😏</div>
+    <div class="pb-8"><span class="font-semibold italic pr-2"><a href="https://tailwindcss.com/" class="!no-underline" target="_blank">Tailwind CSS</a> + <a href="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor" class="!no-underline" target="_blank">Blazor</a>, clearly</span> 😏</div>
 
     More specifically, it's how i set up my Blazor projects to work with Tailwind's <a href="https://blog.tailwindcss.com/tailwindcss-2-2#all-new-high-performance-tailwind-cli" target="_blank">new CLI</a> and <a href="https://blog.tailwindcss.com/just-in-time-the-next-generation-of-tailwind-css" target="_blank">JIT mode</a> and get the best out of both.
 
@@ -22,7 +22,7 @@
 
     <hr />
 
-    Check out <a href="https://www.tailblazor.dev">tailblazor.dev</a> (warning: WIP!) for more detail, but here's a quick rundown of some of the steps i take to hook up a freshly-created Blazor project with Tailwind:
+    Here's a quick rundown of some of the steps i take to hook up a freshly-created Blazor project with Tailwind:
 
     <ul>
 
@@ -52,6 +52,13 @@
             </div>
         </li>
         <li>
+            Add <code>@("<IntermediateOutputPath>obj</IntermediateOutputPath>")</code> to the <code>csproj</code> file.
+
+            <div class="info">
+                When using Blazor's <a href="https://docs.microsoft.com/en-us/aspnet/core/blazor/components/css-isolation?view=aspnetcore-6.0" target="_blank">CSS Isolation</a>, the generated <code>*.styles.css</code>  will be output to the project's <code>obj/Debug</code> or <code>obj/Release</code>, depending on build configuration.  Putting the above in the <code>csproj</code> gives the file a constant path to <code>@@import</code> and pipe through `nesting` and `tailwindcss`.
+            </div>
+        </li>
+        <li>
             Add a <code>watch.ps1</code> script file.
             
             <div class="info">
@@ -68,14 +75,19 @@
 
     <hr />
 
-    For this template, i'm using a couple handy Tailwind plugins:
+    Visit the <a href="https://github.com/McNerdius/TailBlazor-Templates" target="_blank">TailBlazor-Templates</a> repo to see it all put together, or <a href="https://www.tailblazor.dev" target="_blank">tailblazor.dev</a> (warning: WIP!) for more details. 
+    
+    <br><br>
+    
+    For these templates, i'm using a couple handy Tailwind plugins:
+
 
     <ul>
         <li>
-        <a href="https://tailwindcss-typography.vercel.app/">tailwindcss/typography</a> for some automatic, opinionated text styling.  Note <a href="https://github.com/tailwindlabs/tailwindcss-typography/releases" target="_blank">v0.5.x+</a> required for Tailwind CSS v3.  
+        <a href="https://tailwindcss-typography.vercel.app/">tailwindcss/typography</a> for some automatic, opinionated text styling.  Note <a href="https://github.com/tailwindlabs/tailwindcss-typography/releases" target="_blank">v0.5.x+</a> is required for Tailwind CSS v3.  
         </li>
         <li>
-            <a href="https://github.com/jorenvanhee/tailwindcss-debug-screens">debug-screens</a> to add that little <code>screen: xx</code> indicator at the bottom left.  This makes <a href="https://tailwindcss.com/docs/responsive-design">responsive design</a> easier.
+            <a href="https://github.com/jorenvanhee/tailwindcss-debug-screens" target="_blank">debug-screens</a> to add a little <code>screen: xx</code> indicator at the bottom left, making <a href="https://tailwindcss.com/docs/responsive-design" target="_blank">responsive design</a> a bit easier.
         </li>
     </ul>
 
