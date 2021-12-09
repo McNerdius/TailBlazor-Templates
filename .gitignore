@@ -3,6 +3,6 @@ local/**
 **/.vs/*
 /obj/**
 
-Templates/Full/**
-Templates/Minimal/TailBlazorPages/**
-Templates/Minimal/TailBlazorServer/**
+Templates/MultiProject/**
+Templates/SingleProject/TailBlazorPages/**
+Templates/SingleProject/TailBlazorServer/**
