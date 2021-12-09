@@ -13,7 +13,10 @@ switch (theme)
         document.documentElement.classList.add("dark");
         break;
     default:
-        console.log("unsupported theme");
+        console.log("unsupported theme: " + theme);
+        localStorage.removeItem("theme");
+        document.documentElement.classList.remove("dark");
+        break;
 }
 
 localStorage.theme = theme;
