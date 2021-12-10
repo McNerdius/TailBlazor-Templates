@@ -2,7 +2,7 @@
 
 <PageTitle>TailBlazorWasm</PageTitle>
 
-<div class="m-auto h-full py-8 
+<div class="m-auto h-full py-8
             prose prose-sm sm:prose md:prose-md lg:prose-lg xl:prose-xl 2xl:prose-2xl
             dark:prose-invert">
 
@@ -10,19 +10,19 @@
         What is TailBlazor ?
     </h2>
 
-    <div class="pb-8"><span class="font-semibold italic pr-2"><a href="https://tailwindcss.com/" class="!no-underline" target="_blank">Tailwind CSS</a> + <a href="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor" class="!no-underline" target="_blank">Blazor</a>, clearly</span> 😏</div>
+    <div class="pb-8"><span class="pr-2"><a href="https://tailwindcss.com/" class="technology" target="_blank">Tailwind CSS</a> + <a href="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor" class="technology" target="_blank">Blazor</a>, clearly</span> 😏</div>
 
     More specifically, it's how i set up my Blazor projects to work with Tailwind's <a href="https://blog.tailwindcss.com/tailwindcss-2-2#all-new-high-performance-tailwind-cli" target="_blank">new CLI</a> and <a href="https://blog.tailwindcss.com/just-in-time-the-next-generation-of-tailwind-css" target="_blank">JIT mode</a> and get the best out of both.
 
     <ul>
         <li>Blazor's <a href="https://docs.microsoft.com/en-us/aspnet/core/test/hot-reload?view=aspnetcore-6.0" targret="_blank">Hot Reload</a> plays nicely with Tailwind's incremental builds.</li>
         <li>Using Tailwind and other PostCSS plugins (<a href="https://tailwindcss.com/docs/using-with-preprocessors#nesting" target="_blank">nesting, for instance</a>) within Scoped CSS (<code>*.razor.css</code>) files is handled.</li>
-        <li>The Tailwind installation and configuration is up to date with the new CLI and JIT experience.  <em>(The docs still largely reflect the older CLI and build-then-purge paradigm.)</em></li>
+        <li>The Tailwind installation and configuration is up to date with the new CLI and JIT experience.</li>
     </ul>
 
     <hr />
 
-    Here's a quick rundown of some of the steps i take to hook up a freshly-created Blazor project with Tailwind:
+    Here's some highlights of some of the steps to take to hook up a freshly-created Blazor project with Tailwind:
 
     <ul>
 
@@ -30,12 +30,12 @@
             <code>npm install -D tailwindcss@latest postcss-import</code>
             
             <div class="info">
-                <code>postcss-import</code> is used to inline Scoped CSS and other custom CSS before Tailwind processes it;  No need to run <code>npm install</code> for <code>autoprefixer</code> or <code>postcss</code> anymore - new CLI takes care of that.
+                <code>postcss-import</code> is used to inline Scoped CSS and other custom CSS before Tailwind processes it;  No need to run <code>npm install</code> for <code>autoprefixer</code> or <code>postcss</code> anymore when using the new CLI.
             </div>
         </li>
             
         <li>
-            <code>npx tailwindcss init --postcss</code> then put <code>'postcss-import': {}</code> and <code>'tailwindcss/nesting': {}</code> at the top of the generated <code>postcss.config.js</code> <code>plugins</code> array.
+            <code>npx tailwindcss init --postcss</code> then put <code>'postcss-import': {}</code> and (optional) <code>'tailwindcss/nesting': {}</code> at the top of the generated <code>postcss.config.js</code> <code>plugins</code> array.
 
             <div class="info">
                 Inlining has to happen first !
@@ -55,7 +55,7 @@
             Add <code>@("<IntermediateOutputPath>obj</IntermediateOutputPath>")</code> to the <code>csproj</code> file.
 
             <div class="info">
-                When using Blazor's <a href="https://docs.microsoft.com/en-us/aspnet/core/blazor/components/css-isolation?view=aspnetcore-6.0" target="_blank">CSS Isolation</a>, the generated <code>*.styles.css</code>  will be output to the project's <code>obj/Debug</code> or <code>obj/Release</code>, depending on build configuration.  Putting the above in the <code>csproj</code> gives the file a constant path to <code>@@import</code> and pipe through `nesting` and `tailwindcss`.
+                When using Blazor's <a href="https://docs.microsoft.com/en-us/aspnet/core/blazor/components/css-isolation?view=aspnetcore-6.0" target="_blank">CSS Isolation</a>, the generated <code>*.styles.css</code>  will be output to the project's <code>obj/Debug</code> or <code>obj/Release</code>, depending on build configuration.  Putting the above in the <code>csproj</code> gives the file a constant path to <code>@@import</code> and pipe through <code>tailwindcss</code> (and other plugins listed in <code>postcss.config.js</code>).
             </div>
         </li>
         <li>
@@ -68,7 +68,7 @@
             
             <div class="info">
                 
-                <a href="https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NpmTaskRunner64" target="_blank">NPM Task Runner</a> for Visual Studio can run <code>tailwindcss --watch</code> every time the project is opened.  Note the task may crash and have to be manually restarted.  JIT mode bugs, i imagine.
+                <a href="https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NpmTaskRunner64" target="_blank">NPM Task Runner</a> for Visual Studio can run <code>tailwindcss --watch</code> every time the project is opened.  Note the task may crash and have to be manually restarted.
             </div> 
         </li>
     </ul>
