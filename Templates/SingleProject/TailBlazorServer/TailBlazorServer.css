@@ -5,7 +5,11 @@
 
 /* override some tailwindcss-typography: */
 a {
-  @apply !text-blue-600;
+  @apply !text-dotnet_blurple !no-underline;
+  &.technology {
+    @apply font-semibold italic !underline
+        !text-black dark:!text-white !decoration-dotnet_blurple;
+  }
 }
 
 code {

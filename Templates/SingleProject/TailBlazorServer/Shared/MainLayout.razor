@@ -1,10 +1,9 @@
-@using Microsoft.AspNetCore.Hosting @* for debug-screens *@
 
 @inherits LayoutComponentBase
 
 <div class="flex flex-col h-full @debug">
     
-    <div class="bg-gradient-to-r from-[#052767] via-[#052767] 
+    <div class="bg-gradient-to-r from-[#052767] via-dotnet_blurple 
                                 to-white dark:to-black 
                 flex flex-row h-10 px-2">
 
@@ -29,8 +28,11 @@
 
 @code
 {
-    //  conditionally enable debug-screens plugin:
-    [Inject] public IWebHostEnvironment HostEnvironment { get; set; }
-    private string debug => HostEnvironment.IsDevelopment() ? "debug-screens" : "";
     // https://github.com/jorenvanhee/tailwindcss-debug-screens
+    // this could be done at run time but the code is different for wasm vs server
+    #if DEBUG
+    private string debug = "debug-screens";
+    #else
+    private string debug = "";
+    #endif
 }
