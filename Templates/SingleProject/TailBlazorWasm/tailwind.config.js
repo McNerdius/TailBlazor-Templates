@@ -7,7 +7,7 @@ module.exports = {
         extend:
         {
             colors: {
-                'dotnet_blurple': '#512BD4'
+                'dotnet-blurple': '#512BD4'
             }
         }
     },
