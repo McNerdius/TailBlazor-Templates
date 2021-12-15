@@ -9,8 +9,8 @@
   ],
   "identity": "McNerdius.TailBlazor.Wasm",
   "groupIdentity": "McNerdius.TailBlazor.Wasm",
-  "name": "Blazor WASM + Tailwind 3 template",
-  "description": "Blazor WASM + Tailwind 3 template",
+  "name": "Blazor WebAssembly + Tailwind CSS v3",
+  "description": "Blazor WebAssembly + Tailwind CSS v3",
   "shortName": "tailblazor-wasm",
   "tags": {
     "language": "C#",

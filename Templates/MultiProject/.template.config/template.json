@@ -13,8 +13,8 @@
   ],
   "identity": "McNerdius.TailBlazor.Full",
   "groupIdentity": "McNerdius.TailBlazor.Full",
-  "name": "Multi-Project Blazor + Tailwind 3 template",
-  "description": "Full Blazor + Tailwind 3 template",
+  "name": "Multi-Project Blazor + Tailwind CSS v3",
+  "description": "Full Blazor + Tailwind CSS v3",
   "shortName": "tailblazor-full",
   "tags": {
     "language": "C#",

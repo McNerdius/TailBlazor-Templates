@@ -9,8 +9,8 @@
   ],
   "identity": "McNerdius.TailBlazor.Server",
   "groupIdentity": "McNerdius.TailBlazor.Server",
-  "name": "Blazor Server + Tailwind 3 template",
-  "description": "Blazor Server + Tailwind 3 template",
+  "name": "Blazor Server + Tailwind CSS v3",
+  "description": "Blazor Server + Tailwind CSS v3",
   "shortName": "tailblazor-server",
   "tags": {
     "language": "C#",
