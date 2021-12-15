@@ -18,10 +18,13 @@ public partial class DarkSwitch : ComponentBase
 
     }
 
-    protected override async Task OnInitializedAsync()
+    protected override async Task OnAfterRenderAsync( bool firstRender )
     {
-        var module = await Module;
-        await module.InvokeAsync<object>( "loadTheme" );
+        if ( firstRender )
+        {
+            var module = await Module;
+            await module.InvokeAsync<object>( "loadTheme" );
+        }
         base.OnInitialized();
     }
 }
