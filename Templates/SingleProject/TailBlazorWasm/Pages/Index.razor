@@ -33,21 +33,29 @@
     <ul>
 
         <li>
-            <code>npm install -D tailwindcss@latest postcss-import</code>
+            <code>npm install -D tailwindcss@latest postcss-import</code>.  Scripts for build, watch, and publish will be added to the resulting <code>package.json</code>.
             
             <div class="info">
-                <code>postcss-import</code> is used to inline Scoped CSS and other custom CSS before Tailwind processes it.  Using the new CLI takes care of <code>autoprefixer</code> and <code>postcss</code> behind the scenes.
+                <code>postcss-import</code> is used to inline Scoped CSS and other custom CSS before Tailwind processes it.  Using the new CLI takes care of <code>autoprefixer</code>, <code>cssnano</code>, and <code>postcss</code> behind the scenes.
             </div>
         </li>
             
         <li>
-            <code>npx tailwindcss init --postcss</code> then put <code>'postcss-import': {}</code> and (optional) <code>'tailwindcss/nesting': {}</code> at the top of the generated <code>postcss.config.js</code> file's <code>plugins</code> array.
-
-            <div class="info">
-                Inlining has to happen first !
-            </div>
+            <code>npx tailwindcss init --postcss</code> creates two essential config files: <code>tailwind.config.js</code> and <code>postcss.config.js</code>.  Lightly edited, not much going on.
 
         </li>
+        <li>
+            Add <code>@("<IntermediateOutputPath>obj</IntermediateOutputPath>")</code> to the <code>csproj</code> file.
+
+            <div class="info">
+                When using Blazor's <a href="https://docs.microsoft.com/en-us/aspnet/core/blazor/components/css-isolation?view=aspnetcore-6.0" target="_blank">CSS Isolation</a>, the generated <code>.styles.css</code> file is output under <code>obj/Debug</code> or <code>obj/Release</code> by default, depending on build configuration.  Putting the above in the <code>csproj</code> gives the file a constant path to <code>@@import</code>.
+            </div>
+        </li>
+        <li>
+            Create a top-level <code>css</code> file to <a href="https://tailwindcss.com/docs/using-with-preprocessors#:~:text=Import%20our%20provided%20CSS%20files" target="_blank">import tailwind's files</a>, Blazor's generated <code>.styles.css</code> file, and any other custom CSS.
+        </li>
+            <div class="info">In <span class="font-bold">Visual Studio,</span> you can use <em>Add Existing Item...</em> on the Project or Solution to add this top-level CSS file, <code>tailwind.config.js</code>, <code>postcss.config.js</code>, and <code>package.json</code> so they're available for editing.</div>
+
         <li>
             Add a <code>tailwindcss.targets</code> file containing all Tailwind-specific C# build steps, referenced in the Blazor project's <code>csproj</code> file using <code>@("<Import Project=\"tailwindcss.targets\" />")</code>. <br>
             
@@ -57,20 +65,9 @@
 
             </div>
         </li>
-        <li>
-            Add <code>@("<IntermediateOutputPath>obj</IntermediateOutputPath>")</code> to the <code>csproj</code> file.
 
-            <div class="info">
-                When using Blazor's <a href="https://docs.microsoft.com/en-us/aspnet/core/blazor/components/css-isolation?view=aspnetcore-6.0" target="_blank">CSS Isolation</a>, the generated <code>*.styles.css</code>  is output to <code>obj/Debug</code> or <code>obj/Release</code> by default, depending on build configuration.  Putting the above in the <code>csproj</code> gives the file a constant path to <code>@@import</code> and pipe through <code>tailwindcss</code> and other plugins listed in <code>postcss.config.js</code>.
-            </div>
-        </li>
         <li>
-            Add a <code>watch.ps1</code> script file.
-            
-            <div class="info">
-                
-                Runs <code>dotnet watch</code> and <code>tailwindcss --watch</code> with some safety checks.<br>
-            </div>
+            Add a <code>watch.ps1</code> script file to run <code>dotnet watch</code> and <code>tailwindcss --watch</code> from the CLI.
             
             <div class="info">
                 
