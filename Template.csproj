@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <DateVersion>$([System.DateTime]::Now.ToString(yyyy.M.d-Hmm))</DateVersion>
+        <!-- <DateVersion>$([System.DateTime]::Now.ToString(yyyy.M.d-Hmm))</DateVersion> -->
+        <DateVersion>$([System.DateTime]::Now.ToString(yyyy.M.d))-preview</DateVersion>
     </PropertyGroup>
     <PropertyGroup>
         <PackageType>Template</PackageType>
