@@ -7,7 +7,7 @@
         <PackageType>Template</PackageType>
         <PackageVersion>$(DateVersion)</PackageVersion>
         <PackageLicenseExpression>0BSD</PackageLicenseExpression>
-        <PackageId>McNerdius.TailBlazor</PackageId>
+        <PackageId>McNerdius.TailBlazorTemplates</PackageId>
         <Title>TailBlazor</Title>
         <Authors>McNerdius</Authors>
         <Description>A collection of Tailwind 3.0 + Blazor WASM project templates.</Description>
@@ -17,7 +17,7 @@
         <IncludeBuildOutput>false</IncludeBuildOutput>
         <ContentTargetFolders>content</ContentTargetFolders>
         <NoDefaultExcludes>true</NoDefaultExcludes>
-        <RepositoryUrl>https://github.com/McNerdius/TailBlazor-</RepositoryUrl>
+        <RepositoryUrl>https://github.com/McNerdius/TailBlazor-Templates</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
     </PropertyGroup>
     <ItemGroup>
