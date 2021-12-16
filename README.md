@@ -6,7 +6,7 @@
 
 get the templates here:
 
-![package](https://img.shields.io/nuget/vpre/McNerdius.TailBlazor?style=for-the-badge)
+[![package](https://img.shields.io/nuget/vpre/McNerdius.TailBlazorTemplates?style=for-the-badge)](https://www.nuget.org/packages/McNerdius.TailBlazorTemplates/)
 
 ---
 
