@@ -1,12 +1,12 @@
 {
-  "name": "tailblazor",
+  "name": "tailblazorfull",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "npx tailwindcss --watch --postcss postcss.config.js --config tailwind.config.js -i TailBlazor.css -o ./RazorClassLibrary/wwwroot/css/TailBlazor.min.css",
-    "build": "npx tailwindcss --postcss postcss.config.js --config tailwind.config.js -i TailBlazor.css -o ./RazorClassLibrary/wwwroot/css/TailBlazor.min.css",
-    "publish": "npx tailwindcss --postcss postcss.config.js --minify --config tailwind.config.js -i TailBlazor.css -o ./RazorClassLibrary/wwwroot/css/TailBlazor.min.css"
+    "watch": "npx tailwindcss --watch --postcss postcss.config.js --config tailwind.config.js -i TailBlazorFull.css -o ./RazorClassLibrary/wwwroot/css/TailBlazorFull.min.css",
+    "build": "npx tailwindcss --postcss postcss.config.js --config tailwind.config.js -i TailBlazorFull.css -o ./RazorClassLibrary/wwwroot/css/TailBlazorFull.min.css",
+    "publish": "npx tailwindcss --postcss postcss.config.js --minify --config tailwind.config.js -i TailBlazorFull.css -o ./RazorClassLibrary/wwwroot/css/TailBlazorFull.min.css"
   },
   "keywords": [],
   "author": "",

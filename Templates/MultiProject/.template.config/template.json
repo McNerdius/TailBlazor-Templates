@@ -19,8 +19,8 @@
     "language": "C#",
     "type": "solution"
   },
-  "sourceName": "TailBlazor",
-  "defaultName": "TailBlazor",
+  "sourceName": "TailBlazorFull",
+  "defaultName": "TailBlazorFull",
   "Framework": {
     "type": "parameter",
     "description": "The target framework for the project.",
