@@ -15,6 +15,6 @@
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.0" />
     </ItemGroup>
     <ItemGroup>
-        <Watch Remove="./wwwroot/css/TailBlazor.min.css" />
+        <Watch Remove="./wwwroot/css/TailBlazorFull.min.css" />
     </ItemGroup>
 </Project>
