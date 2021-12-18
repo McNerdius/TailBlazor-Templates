@@ -3,19 +3,19 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace TailBlazorServer.Pages;
+namespace BlazorServer.Pages;
 
-[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+[ResponseCache( Duration = 0, Location = ResponseCacheLocation.None, NoStore = true )]
 [IgnoreAntiforgeryToken]
 public class ErrorModel : PageModel
 {
     public string? RequestId { get; set; }
 
-    public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+    public bool ShowRequestId => !string.IsNullOrEmpty( RequestId );
 
     private readonly ILogger<ErrorModel> _logger;
 
-    public ErrorModel(ILogger<ErrorModel> logger)
+    public ErrorModel( ILogger<ErrorModel> logger )
     {
         _logger = logger;
     }
