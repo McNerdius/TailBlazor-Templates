@@ -1,0 +1,25 @@
+name: nuget-push
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "6.0.x"
+
+      - name: Pack
+        run: |
+          dotnet restore
+          dotnet pack ./Template.csproj --no-build --output .\
+      - name: Push
+        run: |
+          ls
+          dotnet nuget push "*.nupkg" --source "https://api.nuget.org/v3/index.json" --api-key ${{ secrets.NUGETTOKEN }}
