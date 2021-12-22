@@ -10,7 +10,7 @@
         <PackageId>McNerdius.TailBlazorTemplates</PackageId>
         <Title>TailBlazor</Title>
         <Authors>McNerdius</Authors>
-        <Description>A collection of Tailwind 3.0 + Blazor WASM project templates.</Description>
+        <Description>A collection of Tailwind 3.0 + Blazor project templates.</Description>
         <PackageTags>blazor;tailwind;tailwindcss;template</PackageTags>
         <TargetFramework>netstandard2.0</TargetFramework>
         <IncludeContentInPack>true</IncludeContentInPack>
