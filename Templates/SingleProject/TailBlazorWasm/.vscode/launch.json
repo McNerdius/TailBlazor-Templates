@@ -39,7 +39,8 @@
   //     "configurations": [
   //       "Debug (no watch!)",
   //     ],
-  //     "preLaunchTask": "watch tailwind"
+  //     "preLaunchTask": "watch tailwind",
+  //     "postDebugTask": "stop watching",
   //   }
   // ],
 }
