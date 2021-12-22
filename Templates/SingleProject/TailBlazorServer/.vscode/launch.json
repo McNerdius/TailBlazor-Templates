@@ -1,0 +1,61 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Watch",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "dotnet",
+      "console": "integratedTerminal",
+      "args": [
+        "watch",
+      ],
+      "cwd": "${workspaceFolder}/",
+      "preLaunchTask": "watch tailwind",
+      "postDebugTask": "stop watching",
+      "presentation": {
+        "close": true,
+      },
+    },
+    {
+      // Use IntelliSense to find out which attributes exist for C# debugging
+      // Use hover for the description of the existing attributes
+      // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+      "name": "Debug (no watch!)",
+      "type": "coreclr",
+      "request": "launch",
+      // "preLaunchTask": "watch tailwind",
+      // If you have changed target frameworks, make sure to update the program path.
+      "program": "${workspaceFolder}/bin/Debug/TailBlazorServer.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/",
+      "stopAtEntry": false,
+      // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "presentation": {
+        // "hidden": true
+        "close": true
+      }
+    },
+  ],
+  // This "works" in that it launches the prelaunchtask,
+  //     which requires a compound task when using 'blazorwasm' launch type.
+  // But it's useless as Hot Reload doesn't function while debugging... yet ?
+  // Leaving it here for future uncommenting... maybe.
+  // Any info open an issue at https://github.com/McNerdius/TailBlazor-Templates
+  // "compounds": [
+  //   {
+  //     "name": "Debug",
+  //     "configurations": [
+  //       "Debug (no watch!)",
+  //     ],
+  //     "preLaunchTask": "watch tailwind"
+  //   }
+  // ],
+}
