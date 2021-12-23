@@ -11,7 +11,7 @@
         "watch",
       ],
       "cwd": "${workspaceFolder}/",
-      "preLaunchTask": "dotnet build & watch tailwind",
+      "preLaunchTask": "watch tailwind",
       "postDebugTask": "stop watching",
       "presentation": {
         "close": true,
