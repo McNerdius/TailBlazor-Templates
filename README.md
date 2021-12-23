@@ -30,7 +30,7 @@ The "runnable template" aspect means it can be browsed/cloned/run as-is, but omi
 
 ---
 
-There is a `hosted-template` branch, a tweaked `dotnet new blazorwasm --hosted`, but Hot Reload isn't working. When i get the branch current i will merge it but it will not be in the nuget package unless/until Hot Reload can be made to work. See [issue #5](https://github.com/McNerdius/TailBlazor-Templates/issues/5).
+WIP/Hosted is a tweaked `dotnet new blazorwasm --hosted`, but Hot Reload isn't working.  It will not be in the nuget package unless/until Hot Reload can be made to work. See [issue #5](https://github.com/McNerdius/TailBlazor-Templates/issues/5).
 
 More single-project templates and subprojects for the `tailblazor-full` template will be added. Blazor/MAUI hybrid stuff as well.
 

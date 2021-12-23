@@ -1,11 +1,14 @@
 vNext:
 
-- PWA for `tailblazor-wasm`
-- Add Razor Pages projects back in
-- VSC Watch/Debug configs
+- [ ] Redo loading animation.
+- [ ] Add content about template usage, make current meta info its own page.
+- [ ] Add Razor Pages projects back in.
+- [*] VSC Watch/Debug configs.
+  - [ ] Make this and watch scripts a template option.
 
 vNextNextish:
 
+- [ ] PWA for `tailblazor-wasm`
 - Add Hosted BlazorWasm template, pending a Hot Reload solution. (See issue [#5](https://github.com/McNerdius/TailBlazor-Templates/issues/5))
 - Blazor Maui / Hybrid templates ("TailBlaui" ? lol)
   - Windows + Android
