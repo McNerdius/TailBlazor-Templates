@@ -1,22 +1,8 @@
-var theme =
-    localStorage.getItem("theme") ??
-    (window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light");
 
-switch (theme)
+if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
 {
-    case "light":
-        document.documentElement.classList.remove("dark");
-        break;
-    case "dark":
-        document.documentElement.classList.add("dark");
-        break;
-    default:
-        console.log("unsupported theme: " + theme);
-        localStorage.removeItem("theme");
-        document.documentElement.classList.remove("dark");
-        break;
+    document.documentElement.classList.add('dark')
+} else
+{
+    document.documentElement.classList.remove('dark')
 }
-
-localStorage.theme = theme;
