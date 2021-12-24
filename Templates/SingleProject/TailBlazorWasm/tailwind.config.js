@@ -8,6 +8,9 @@ module.exports = {
         {
             colors: {
                 'dotnet-blurple': '#512BD4'
+            },
+            animation: {
+                'spin-slow': 'spin 7s linear infinite',
             }
         }
     },
