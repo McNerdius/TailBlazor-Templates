@@ -1,6 +1,9 @@
 ## vNext
 
 * Add VSCode launch configs back in.
+* Make `.vscode` folder and `watch` scripts optional.
+* Improve site loader a bit: Spinny radial gradient but not face; add text.
+* Trim down DarkSwitch code.  JS code came from a multi-themed project hence the unneeded switch; dark/light theme initialization moved from component's backing code to JS.
 * Add WIP Blazor Wasm Hosted project.  Not a template (yet?) as Hot Reload doesn't work well for Hosted project types.
 
 ## 2021-12-18

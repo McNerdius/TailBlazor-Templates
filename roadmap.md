@@ -1,10 +1,10 @@
 vNext:
 
-- [ ] Redo loading animation.
+- [x] Redo loading animation.
 - [ ] Add content about template usage, make current meta info its own page.
 - [ ] Add Razor Pages projects back in.
 - [*] VSC Watch/Debug configs.
-  - [ ] Make this and watch scripts a template option.
+  - [x] Make this and watch scripts a template option.
 
 vNextNextish:
 
