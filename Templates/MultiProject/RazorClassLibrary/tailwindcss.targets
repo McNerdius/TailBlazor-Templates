@@ -2,7 +2,7 @@
     <PropertyGroup>
         <TailwindBuild>true</TailwindBuild>
     </PropertyGroup>
-    <Target Name="npm install" BeforeTargets="tailwind build" Inputs="package.json" Outputs="../node_modules/.install-stamp">
+    <Target Name="npm install" BeforeTargets="tailwind build" Inputs="../package.json" Outputs="../node_modules/.install-stamp">
         <Exec Command="npm -v" ContinueOnError="true">
             <Output TaskParameter="ExitCode" PropertyName="error" />
         </Exec>
