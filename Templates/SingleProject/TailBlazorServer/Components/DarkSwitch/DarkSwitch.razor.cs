@@ -17,14 +17,4 @@ public partial class DarkSwitch : ComponentBase
         await module.InvokeAsync<object>( "toggleTheme" );
 
     }
-
-    protected override async Task OnAfterRenderAsync( bool firstRender )
-    {
-        if ( firstRender )
-        {
-            var module = await Module;
-            await module.InvokeAsync<object>( "loadTheme" );
-        }
-        base.OnInitialized();
-    }
 }
