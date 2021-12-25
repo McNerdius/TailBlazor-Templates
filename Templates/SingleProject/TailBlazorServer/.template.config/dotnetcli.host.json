@@ -1,0 +1,12 @@
+{
+  "symbolInfo": {
+    "Include-VSC-Configs": {
+      "longName": "include-vscode",
+      "shortName": "vsc"
+    },
+    "Include-Watch-Script": {
+      "longName": "include-watch",
+      "shortName": "ps1"
+    }
+  }
+}

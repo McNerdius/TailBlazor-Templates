@@ -29,5 +29,39 @@
     ],
     "replaces": "net6.0",
     "defaultValue": "net6.0"
-  }
+  },
+  "symbols": {
+    "Include-VSC-Configs": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true",
+      "description": "Includes Hot Reload & Debug configurations plus some settings & extension recommendations.",
+      "displayName": "Include .vscode Folder"
+    },
+    "Include-Watch-Script": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true",
+      "description": "Includes a PowerShell script to launch Blazor app & Tailwind CLI in Hot Reload & Incremental build modes, respectively.",
+      "displayName": "Include Watch Script"
+    }
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(!Include-VSC-Configs)",
+          "exclude": [
+            ".vscode/**"
+          ]
+        },
+        {
+          "condition": "(!Include-Watch-Script)",
+          "exclude": [
+            "watch.ps1"
+          ]
+        }
+      ]
+    }
+  ]
 }
