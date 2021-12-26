@@ -1,0 +1,40 @@
+﻿@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="./_content/RazorClassLibrary/initializeDarkMode.js" ></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlazorPages</title>
+    <link rel="icon" href="./_content/RazorClassLibrary/awesome.svg" />
+    <link rel="stylesheet" href="./_content/RazorClassLibrary/css/TailBlazorFull.min.css" asp-append-version="true" />
+
+    <base href="~/" />
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
+
+</head>
+<body>
+    
+    <main role="main" class="pb-4">
+        @RenderBody()
+    </main>
+
+    <footer class="border-top bottom-0 flex flex-row w-full justify-evenly leading-[60px] text-neutral-800 dark:text-neutral-200">
+        <div>
+            &copy; 2021 - BlazorPages - <a class="underline text-blue-600" asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+        <div class="italic font-bold">
+            Hello from Razor Pages !
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery-3.6.0.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="_framework/blazor.server.js"></script>
+    
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

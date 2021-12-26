@@ -10,6 +10,14 @@ get the templates here:
 
 ---
 
+# Next up for the templates:
+
+* A lighter-weight landing page geared toward "getting started" (where ur CSS goes, troubleshooting, ...) rather than the current background/meta stuff.  The new landing page will be native to the project type (`.cshtml`,`xaml`), and the current meta info will be linked to.
+* A DI setup.  Maybe some form of the "random person card" thing from the old templates.
+* ... ?
+
+---
+
 # TailBlazor-Templates
 
 .NET project templates for Blazor + Tailwind CSS v3
@@ -21,18 +29,21 @@ The "runnable template" aspect means it can be browsed/cloned/run as-is, but omi
 | path                    | template            | notes                                                  |
 | :---------------------- | :------------------ | :----------------------------------------------------- |
 | Template/SingleProject/ |                     |                                                        |
-| -- TailBlazorWasm       | `tailblazor-wasm`   | Tailwind CSS 3 version of `dotnet new blazorwasm`      |
-| -- TailBlazorServer     | `tailblazor-server` | Tailwind CSS 3 version of `dotnet new blazorserver`    |
-| Templates/MultiProject  | `tailblazor-full`   | multiple hosts for Razor Components using Tailwind CSS |
-| -- RazorClassLibrary    |                     | where all the UI lives                                 |
-| -- BlazorWasm           |                     | boilerplate                                            |
-| -- BlazorServer         |                     | boilerplate                                            |
+| -- TailBlazorWasm       | `tailblazor-wasm`   |  `dotnet new blazorwasm` + Tailwind CSS 3       |
+| -- TailBlazorServer     | `tailblazor-server` |  `dotnet new blazorserver` + Tailwind CSS 3     |
+| -- TailBlazorPages      | `tailblazor-pages ` |  `dotnet new razor` + Tailwind CSS 3 + [Razor Components integration](https://docs.microsoft.com/en-us/aspnet/core/blazor/components/prerendering-and-integration?view=aspnetcore-6.0&pivots=server) |
+| -- TailBlazorMaui       | `tailblazor-maui`   |  Preview Blazor Maui project + Tailwind CSS 3       |
+| Templates/MultiProject  | `tailblazor-full`   |  multiple hosts for Razor Components using Tailwind CSS |
+| -- RazorClassLibrary    |                     |  where all the UI lives                                 |
+| -- BlazorWasm           |                     |  boilerplate                                            |
+| -- BlazorServer         |                     |  boilerplate                                            |
+| -- BlazorPages          |                     |  boilerplate + [integration](https://docs.microsoft.com/en-us/aspnet/core/blazor/components/prerendering-and-integration?view=aspnetcore-6.0&pivots=server)                                             |
 
 ---
 
 WIP/Hosted is a tweaked `dotnet new blazorwasm --hosted`, but Hot Reload isn't working.  It will not be in the nuget package unless/until Hot Reload can be made to work. See [issue #5](https://github.com/McNerdius/TailBlazor-Templates/issues/5).
 
-More single-project templates and subprojects for the `tailblazor-full` template will be added. Blazor/MAUI hybrid stuff as well.
+A Blazor Maui subproject for the MultiProject template will happen when the tooling improves.
 
 ## Q/A
 
