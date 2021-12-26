@@ -5,6 +5,7 @@
 * Improve site loader a bit: Spinny radial gradient but not face; add text.
 * Trim down DarkSwitch code.  JS code came from a multi-themed project hence the unneeded switch; dark/light theme initialization moved from component's backing code to JS.
 * Add WIP Blazor Wasm Hosted project.  Not a template (yet?) as Hot Reload doesn't work well for Hosted project types.
+* Add "Blazor Pages" projects: Razor Pages + Tailwind 3 + [Razor Component integration](https://docs.microsoft.com/en-us/aspnet/core/blazor/components/prerendering-and-integration?view=aspnetcore-6.0&pivots=server).  Both single project and an addition to the MultiProject.  Hot Reload TBD: might end up in "WIP" folder with Hosted.
 
 ## 2021-12-18
 
