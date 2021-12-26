@@ -1,4 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+    <Import Project="tailwindcss.targets" />
     <PropertyGroup>
         <!-- ;net6.0-ios;net6.0-maccatalyst -->
         <TargetFrameworks>net6.0-android</TargetFrameworks>
