@@ -1,21 +1,67 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "McNerdius",
+  "shortName": "tailblazor-pages",
+  "identity": "McNerdius.TailBlazor.Pages",
+  "name": "Blazor WebAssembly with Tailwind CSS v3",
+  "description": "Use Blazor and Tailwind 3's JIT & fast incremental builds alongside .NET Hot Reload in your Razor Pages projects.  Also enables use of Tailwind CSS functions & directives, nesting, and more in your Razor Components' Scoped CSS files.",
   "classifications": [
     "Web",
     "Blazor",
     "Razor Pages",
     "Tailwind CSS"
   ],
-  "identity": "McNerdius.TailBlazor.Wasm",
-  "groupIdentity": "McNerdius.TailBlazor",
-  "name": "Razor Pages + Blazor + Tailwind 3 template",
-  "description": "Razor Pages + Blazor + Tailwind 3 template",
-  "shortName": "tailblazor-pages",
   "tags": {
     "language": "C#",
     "type": "project"
   },
   "sourceName": "TailBlazorPages",
-  "defaultName": "TailBlazorPages"
+  "defaultName": "TailBlazorPages",
+  "Framework": {
+    "type": "parameter",
+    "description": "The target framework for the project.",
+    "datatype": "choice",
+    "choices": [
+      {
+        "choice": "net6.0",
+        "description": "Target net6.0"
+      }
+    ],
+    "replaces": "net6.0",
+    "defaultValue": "net6.0"
+  },
+  "symbols": {
+    "Include-VSC-Configs": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true",
+      "description": "Includes Hot Reload & Debug configurations plus some settings & extension recommendations.",
+      "displayName": "Include .vscode Folder"
+    },
+    "Include-Watch-Script": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true",
+      "description": "Includes a PowerShell script to launch Blazor app & Tailwind CLI in Hot Reload & Incremental build modes, respectively.",
+      "displayName": "Include Watch Script"
+    }
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(!Include-VSC-Configs)",
+          "exclude": [
+            ".vscode/**"
+          ]
+        },
+        {
+          "condition": "(!Include-Watch-Script)",
+          "exclude": [
+            "watch.ps1"
+          ]
+        }
+      ]
+    }
+  ]
 }
