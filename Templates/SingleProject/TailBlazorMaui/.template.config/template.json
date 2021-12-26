@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "McNerdius",
+  "shortName": "tailblazor-maui",
+  "identity": "McNerdius.TailBlazor.Maui",
+  "name": "Blazor WebAssembly with Tailwind CSS v3",
+  "description": "Use Tailwind 3's JIT & fast incremental builds alongside .NET Hot Reload in your Blazor Maui projects.  Also enables use of Tailwind CSS functions & directives, nesting, and more in your Razor Components' Scoped CSS files.",
+  "classifications": [
+    "Blazor",
+    "Maui",
+    "Tailwind CSS"
+  ],
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "TailBlazorMaui",
+  "defaultName": "TailBlazorMaui",
+  "Framework": {
+    "type": "parameter",
+    "description": "The target framework for the project.",
+    "datatype": "choice",
+    "choices": [
+      {
+        "choice": "net6.0",
+        "description": "Target net6.0"
+      }
+    ],
+    "replaces": "net6.0",
+    "defaultValue": "net6.0"
+  }
+}
