@@ -1,0 +1,11 @@
+.info {
+  @apply p-2 ml-1 mt-4 mb-8 rounded-md 
+         text-[90%] italic
+         bg-yellow-50 ring-1 ring-orange-300 
+         dark:bg-amber-400 dark:text-black;
+
+  &:before {
+    content: url("info.svg");
+    @apply w-6 h-6 mr-2 inline-block;
+  }
+}
