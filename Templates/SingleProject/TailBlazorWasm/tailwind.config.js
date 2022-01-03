@@ -1,13 +1,17 @@
+const colors = require('tailwindcss/colors');
+
 module.exports = {
     content: [
-        './**/*.{razor,html}'
+        '!**/{bin,obj,node_modules}/**',
+        '**/*.{razor,html}',
     ],
     theme:
     {
         extend:
         {
             colors: {
-                'dotnet-blurple': '#512BD4'
+                'dotnet-blurple': '#512BD4',
+                'link-blue': colors.blue[500]
             },
             animation: {
                 'spin-slow': 'spin 7s linear infinite',
@@ -16,7 +20,6 @@ module.exports = {
     },
     darkMode: 'class',
     plugins: [
-        require("@tailwindcss/typography"),
         require('tailwindcss-debug-screens')
     ]
 }

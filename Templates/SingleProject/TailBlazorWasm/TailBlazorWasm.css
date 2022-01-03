@@ -3,24 +3,90 @@
 @import "tailwindcss/utilities";
 @import "./obj/scopedcss/bundle/TailBlazorWasm.styles.css";
 
-/* override some tailwindcss-typography: */
-a {
-  @apply !text-dotnet-blurple;
-  &.technology {
-    @apply font-semibold italic !underline
-        !text-black dark:!text-white 
-        !decoration-dotnet-blurple !decoration-wavy;
-  }
+
+html,body
+{
+  @apply h-full;
+}
+
+a
+{
+  @apply text-link-blue font-semibold;
+}
+
+body
+{
+  @apply bg-white dark:bg-neutral-900
+          text-black dark:text-white
+          transition-colors duration-300 ease-in-out;
+}
+
+.app
+{
+  @apply  m-auto pb-8 max-w-5xl 
+          pt-4 sm:pt-6 md:pt-8 lg:pt-12
+          pl-6 pr-3 sm:px-8 md:px-10
+
+          transition-[font-size,padding] duration-700 ease-in-out;
+  
+  @apply text-[14px] md:text-[16px] lg:md:text-[18px];
+}
+
+p
+{
+  @apply first-of-type:pt-6 pb-6 sm:indent-8;
+         
+  @apply leading-normal;
+}
+
+hr 
+{
+  @apply m-8 border-neutral-300;
+}
+
+h1
+{
+  @apply text-[250%] font-bold
+         leading-loose;
+}
+
+h2
+{
+  @apply text-[200%] font-bold
+           leading-loose;
+  
+}
+
+h3
+{
+  @apply text-[160%] font-bold
+          leading-loose;
+}
+
+ol,ul
+{
+  @apply py-6;
+}
+
+ol
+{
+  @apply list-decimal;
+}
+
+ul
+{
+  @apply list-disc list-inside;
 }
 
 code {
-  /* more like ohmyposh.dev, less like tailwindcss.com */
-  @apply before:!content-none after:!content-none;
-  @apply !font-medium;
+  @apply p-0 m-0 px-1 rounded-md 
+      ring-1 ring-inset ring-slate-300 dark:ring-0
+      bg-slate-100 dark:bg-slate-800;
+}
 
-  @apply px-[0.3rem] py-px mx-1 rounded-md 
-      !ring-1 !ring-slate-300 dark:!ring-0
-      bg-slate-100 dark:bg-slate-700;
+strong {
+  @apply font-semibold text-orange-600 italic px-2;
+
 }
 
 #blazor-error-ui {
