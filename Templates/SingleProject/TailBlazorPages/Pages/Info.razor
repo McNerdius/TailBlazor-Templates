@@ -6,16 +6,16 @@
 
 <h2>Tailwind CSS v3 & .NET Hot Reload</h2>
 
-<p>The big change version 3 brings is making version 2's experimental <a href="https://tailwindcss.com/blog/tailwindcss-v3#just-in-time-all-the-time" target="_blank">JIT mode</a> standard.  With that comes <a href="https://tailwindcss.com/blog/just-in-time-the-next-generation-of-tailwind-css#:~:text=with%20incremental%20rebuilds%20as%20fast%20as%203ms" target="_blank">incremental builds</a>, much like .NET Hot Reload.  Running <code>tailwindcss</code> with the <code>--watch</code> parameter, it will watch your project for changes and append CSS changes rather than doing full rebuilds.</p>
+<p>The big change v3 brings is making <a href="https://tailwindcss.com/blog/tailwindcss-v3#just-in-time-all-the-time" target="_blank">JIT mode</a> standard.  With this comes <a href="https://tailwindcss.com/blog/just-in-time-the-next-generation-of-tailwind-css#:~:text=with%20incremental%20rebuilds%20as%20fast%20as%203ms" target="_blank">incremental builds</a>, much like .NET Hot Reload.  Running <code>tailwindcss</code> with the <code>--watch</code> parameter, it will watch your project for changes and append CSS changes rather than doing full rebuilds.</p>
 
-<p>The templates include <code>watch</code> PowerShell scripts and VS Code watch & debug launch configurations to start the <code>tailwindcss</code> CLI alongside <code>dotnet watch</code>.  <strong>If you're using Visual Studio</strong> you can use <a href="https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NpmTaskRunner64" target="_blank">NPM Task Runner</a>, connecting the <code>watch</code> task defined in <code>package.json</code> to "Project Open".  (<a href="images/npm_task_runner.png" target="_blank">see here</a> - keep an eye on the Task, it may crash !)</p>
+<p>The templates include <code>watch</code> PowerShell scripts and VS Code watch & debug launch configurations to start the <code>tailwindcss</code> CLI alongside <code>dotnet watch</code>.  <strong>If you're using Visual Studio:</strong> use <a href="https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NpmTaskRunner64" target="_blank">NPM Task Runner</a>, connecting the <code>watch</code> task defined in <code>package.json</code> to "Project Open".  (<a href="images/npm_task_runner.png" target="_blank">see here</a> - keep an eye on the Task, it may crash !)</p>
 
 
 <h2>Essential Files</h2>
 
 <p>Starting with a default <code>dotnet</code> template, these templates add five essential files to the root of the project, two lines to the <code>csproj</code> file, and links Tailwind's generated CSS in the site's index/layout page.</p>
 
-<p>You'll probably want to use <em>Add Existing Item...</em> on the template's Project or Solution to add some or all of the five files for easy access.</p>
+<p>You'll probably want to use <em>Add Existing Item...</em> on the template's Project or Solution to add some or all of these files for easy access.</p>
 
 <ol>
     <li>
@@ -35,10 +35,10 @@
     <li>    
         <code>postcss.config.js</code>
 
-        <p>This is a list of PostCSS plugins the <code>TailBlazorPages.css</code> file is piped through, top-to-bottom.  The <code>tailwindcss</code> CLI will also apply <a href="https://autoprefixer.github.io/">Autoprefixer</a> and optionally <a href="https://cssnano.co/">cssnano</a> aftwerward.  <em>(The empty <code>{}</code> is where any extension-specific options/parameters would be passed, FWIW.)</em></p> 
+        <p>This is a list of <a href="https://github.com/postcss/postcss/blob/main/docs/architecture.md#overview" target="_blank" >PostCSS</a> plugins the <code>TailBlazorPages.css</code> file is piped through, top-to-bottom.  The <code>tailwindcss</code> CLI will also apply <a href="https://autoprefixer.github.io/" target="_blank">Autoprefixer</a> and optionally <a href="https://cssnano.co/" target="_blank">cssnano</a> aftwerward.  <em>(The empty <code>{}</code> is where any extension-specific options/parameters would be passed, FWIW.)</em></p> 
         
         <ul>
-            <li><code>'postcss-import': {}</code> is required to <code>@@import</code> any CSS in <code>TailBlazorPages.css</code>.  It inlines all referenced CSS into one large string before passing it on.</li>
+            <li><code>'postcss-import': {}</code> is required to <code>@@import</code> any CSS in <code>TailBlazorPages.css</code>.  It inlines all referenced CSS into one large string before passing it on.  See more <a href="https://tailwindcss.com/docs/using-with-preprocessors#build-time-imports" target="_blank">here</a></li> 
             <li><code>'tailwindcss/nesting': {}</code> enables Sass-like nesting.  See more <a href="https://tailwindcss.com/docs/using-with-preprocessors#nesting" target="_blank">here</a>.  </li>
         </ul>
 
