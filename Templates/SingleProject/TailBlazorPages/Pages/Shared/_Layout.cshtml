@@ -3,7 +3,6 @@
 
 @{
     // https://github.com/jorenvanhee/tailwindcss-debug-screens
-    // this could be done at run time but the code is different for wasm vs server
     #if DEBUG
      string debug = "debug-screens";
     #else
@@ -19,6 +18,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TailBlazorPages</title>
+
+    <link rel="icon" href="awesome.svg" />
     <link rel="stylesheet" href="~/css/TailBlazorPages.min.css" asp-append-version="true" />
 
     <base href="~/" />
