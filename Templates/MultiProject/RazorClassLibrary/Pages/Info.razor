@@ -1,0 +1,93 @@
+@page "/info"
+
+<PageTitle>Info</PageTitle>
+
+<h1>Template & Usage Info</h1>
+
+<h2>Tailwind CSS v3 & .NET Hot Reload</h2>
+
+<p>The big change v3 brings is making <a href="https://tailwindcss.com/blog/tailwindcss-v3#just-in-time-all-the-time" target="_blank">JIT mode</a> standard.  With this comes <a href="https://tailwindcss.com/blog/just-in-time-the-next-generation-of-tailwind-css#:~:text=with%20incremental%20rebuilds%20as%20fast%20as%203ms" target="_blank">incremental builds</a>, much like .NET Hot Reload.  Running <code>tailwindcss</code> with the <code>--watch</code> parameter, it will watch your project for changes and append CSS changes rather than doing full rebuilds.</p>
+
+<p>The templates include <code>watch</code> PowerShell scripts and VS Code watch & debug launch configurations to start the <code>tailwindcss</code> CLI alongside <code>dotnet watch</code>.  <strong>If you're using Visual Studio:</strong> use <a href="https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NpmTaskRunner64" target="_blank">NPM Task Runner</a>, connecting the <code>watch</code> task defined in <code>package.json</code> to "Project Open".  (<a href="images/npm_task_runner.png" target="_blank">see here</a> - keep an eye on the Task, it may crash !)</p>
+
+
+<h2>Essential Files</h2>
+
+<p>Starting with a default <code>dotnet</code> template, these templates add five essential files to the root of the project, two lines to the <code>csproj</code> file, and links Tailwind's generated CSS in the site's index/layout page.</p>
+
+<p>You'll probably want to use <em>Add Existing Item...</em> on the template's Project or Solution to add some or all of these files for easy access.</p>
+
+<ol>
+    <li>
+        <code>RazorClassLibrary.css</code>
+
+        <p>The main CSS file <code>tailwindcss</code> will be processing.  This is where you'll <code>@@import</code> any CSS you want Tailwind to process & bundle.  <strong>It includes a link to the project's CSS Isolation bundle (<code>RazorClassLibrary.styles.css</code>). Remove this if you're not using Scoped CSS (<code>*.razor.css</code>), as the <code>*.styles.css</code> bundle will not be generated, and the build will fail !</strong>  Similarly, if your project is renamed, the generated filename will change.
+        </p>
+    </li>
+
+    <li>
+        <code>tailwind.config.js</code>
+        
+        <p>The <code>content</code> array in Tailwind's config file <em>must</em> point at <em>any</em> non-CSS files containing Tailwind CSS class names.  This could be <code>razor</code>, <code>cshtml</code>, <code>html</code>, <code>svg</code>, or even <code>cs</code> if you're computing class names.  <strong>The more specific the path(s) provided the better, but i've used a <code>**</code> glob in the templates for a smoother "new project" experience, as the paths your project uses may vary.</strong>  See <a href="https://tailwindcss.com/docs/content-configuration#pattern-recommendations" target="_blank">here</a> for more info.
+        </p>
+    </li>
+
+    <li>    
+        <code>postcss.config.js</code>
+
+        <p>This is a list of <a href="https://github.com/postcss/postcss/blob/main/docs/architecture.md#overview" target="_blank" >PostCSS</a> plugins the <code>RazorClassLibrary.css</code> file is piped through, top-to-bottom.  The <code>tailwindcss</code> CLI will also apply <a href="https://autoprefixer.github.io/" target="_blank">Autoprefixer</a> and optionally <a href="https://cssnano.co/" target="_blank">cssnano</a> aftwerward.  <em>(The empty <code>{}</code> is where any extension-specific options/parameters would be passed, FWIW.)</em></p> 
+        
+        <ul>
+            <li><code>'postcss-import': {}</code> is required to <code>@@import</code> any CSS in <code>RazorClassLibrary.css</code>.  It inlines all referenced CSS into one large string before passing it on.  See more <a href="https://tailwindcss.com/docs/using-with-preprocessors#build-time-imports" target="_blank">here</a></li> 
+            <li><code>'tailwindcss/nesting': {}</code> enables Sass-like nesting.  See more <a href="https://tailwindcss.com/docs/using-with-preprocessors#nesting" target="_blank">here</a>.  </li>
+        </ul>
+
+    </li>
+        
+    <li>
+        <code>package.json</code>
+        
+        <p>Includes three helper scripts, named using <code>dotnet</code> CLI convention: <code>build</code>, <code>publish</code>, and <code>watch</code>.  They're mostly identical, with <code>build</code> resembling <code>"npx tailwindcss --postcss postcss.config.js --config tailwind.config.js -i RazorClassLibrary.css -o ./wwwroot/css/RazorClassLibrary.min.css"</code>.</p>
+        
+        <ul>
+            <li><code>watch</code> adds <code>--watch</code>, enabling Tailwind's incremental builds, where CSS edits are appended rather than full rebuilds - much like .NET Hot Reload.</li>
+    
+            <li><code>publish</code> adds <code>--minify</code>, enabling <code>cssnano</code> minification of the output CSS.</li>
+        </ul>
+
+        <p>Having set these up, <code>npm run build</code> etc will do the thing.  <strong>Running any of these before <code>dotnet build</code> may fail if you're using CSS Isolation - the <code>*.styles.css</code> file must be on disk first !</strong>  You shouldn't have to run them manually, just be aware of this scenario.
+        </p>
+    </li>
+
+    <li>
+        <code>tailwindcss.targets</code>
+        
+        <p>This is an MSBuild file that injects <code>npm</code> package installation, <code>npm run build</code>, and <code>npm run publish</code> into the build process.  <code>dotnet build</code> follows up with an <code>npm run build</code>, same for publish.
+        </p>
+    </li>
+        
+</ol>
+
+<h3>Additions to <code>RazorClassLibrary.csproj</code></h3>
+
+    <ul>
+        <li><code>@("<IntermediateOutputPath>obj</IntermediateOutputPath>")</code> removes <code>Debug</code>/<code>Release</code> from the CSS Isolation bundle's output path, so that it can be imported in <code>RazorClassLibrary.css</code> with no fuss.</li>
+        <li><code>@("<Import Project=\"tailwindcss.targets\" />")</code> enables the changes mentioned above.</li>
+    </ul>
+
+
+
+<hr />
+
+
+<h2>Plug and Play</h2>
+
+<p>For these templates, i'm using <a href="https://github.com/jorenvanhee/tailwindcss-debug-screens" target="_blank">debug-screens</a> to add a little <code>screen: xx</code> indicator at the bottom left, making <a href="https://tailwindcss.com/docs/responsive-design" target="_blank">responsive design</a> a bit easier.  Also in use is the nifty PostCSS plugin built into the <code>tailwindcss</code> package, <a href="https://tailwindcss.com/docs/using-with-preprocessors#nesting" target="_blank">tailwindcss/nesting</a>.  Check out <a href="https://tailwindcss.com/blog/tailwindcss-typography-v0-5">tailwindcss/typography</a> for some opinionated text styling.  </p>
+
+<hr />
+
+
+
+<p class="text-[200%]">Visit <a href="https://www.tailblazor.dev" target="_blank">www.tailblazor.dev</a> for a step-by-step of converting a <code>dotnet new blazorwasm</code> template. 😃👍</p>
+
+<footer class="font-mono text-right">@@ Info.razor</footer>
