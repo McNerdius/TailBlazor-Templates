@@ -6,24 +6,21 @@ Functional:
 - [x] Trim down DarkSwitch code.  JS code came from a multi-themed project hence the unneeded switch; dark/light theme initialization moved from component's backing code to JS.
 - [x] Add WIP Blazor Wasm Hosted project.  Not a template (yet?) as Hot Reload doesn't work well for Hosted project types.
 - [x] Add "Blazor Pages" projects: Razor Pages + Tailwind 3 + [Razor Component integration](https://docs.microsoft.com/en-us/aspnet/core/blazor/components/prerendering-and-integration?view=aspnetcore-6.0&pivots=server).  Both single project and an addition to the MultiProject.  Use `_Layout.cshtml` rather than Blazor `MainLayout`.  Hot Reload TBD: might end up in "WIP" folder with Hosted.
-- [ ] Remove `typography` dependency.
-- [ ] Update `DarkSwitch` to use explicit values; remove outer padding.
-- [ ] 
+- [x] Remove `typography` dependency.
+- [x] Update `DarkSwitch` to use explicit values; remove outer padding.
+- [x] Add `'!**/{bin,obj,node_modules}/**'` content filter to `tailwind.config.js` 
+
 
 Content:
-- [ ] Split single page in two: 
+- [x] Split single page in two: 
   1. Landing page.  Meant to use project type's "native" page: `cshtml` for Razor Pages this release, `xaml` for MAUI upcoming, ...
   2. Usage info.  Razor Component.
-- [ ] Extract "app" CSS to share in `index.html` / `_Layout.cshtml`
-- [ ] Add filename footers to pages to visualize layouts.
-- [ ] 
+- [x] Extract "app" CSS to share in `index.html` / `_Layout.cshtml`
+- [x] Add filename footers to pages to visualize layouts.
 
 Misc:
   - [x] Improve site loader a bit: Spinny radial gradient but not face; add text.
-  - [ ] Remove `<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>` from the `csproj` files and docs: MAUI needs this.
-  - [ ] 
-
-
+  - [x] Remove `<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>` from the `csproj` files and docs: MAUI needs this.
 
 ## 2021-12-18
 
