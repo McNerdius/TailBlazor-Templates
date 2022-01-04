@@ -1,99 +1,49 @@
 @page "/"
 
-<PageTitle>TailBlazorMaui</PageTitle>
+<h1>Welcome to TailBlazor-Templates</h1>
 
-<div class="m-auto max-w-5xl 
-            pt-4 sm:pt-6 md:pt-8 lg:pt-12
-            pb-8 sm:pb-12 md:pb-20 lg:py-24
-            px-3 sm:px-6 md:px-10
-            prose md:prose-lg lg:prose-xl 2xl:prose-2xl
-            transition-[font-size,padding] duration-300 ease-in-out
-            dark:prose-invert">
+<p>
+TailBlazor-Templates is an ongoing Work-In-Progress, find the latest templates <a href="https://www.nuget.org/packages/McNerdius.TailBlazorTemplates/">on NuGet</a> or browse the code <a href="gh">on GitHub.</a>
+</p>
 
-    <h2>Welcome to TailBlazor-Templates</h2>
 
-    <em>Please note that Tailwind CSS is meant to <a href="https://tailwindcss.com/blog/tailwindcss-v3#just-in-time-all-the-time" target="_blank">watch your files</a> and ideally should build CSS <strong>separate from .NET's Hot Reload</strong>.  To take advantage of this in Visual Studio, check out <a href="https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NpmTaskRunner64" target="_blank">NPM Task Runner</a>.  See below and <a href="https://www.tailblazor.dev/build#watch" target="_blank">here</a> for more info.</em>
-
-    <h3>What is TailBlazor ?</h3>
-
-    <div class="pb-8"><span class="pr-2"><a href="https://tailwindcss.com/" class="technology" target="_blank">Tailwind CSS</a> + <a href="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor" class="technology" target="_blank">Blazor</a>, clearly.</span> 😏</div>
-
-    More specifically, it's how i set up my Blazor projects to work with Tailwind's <a href="https://blog.tailwindcss.com/tailwindcss-2-2#all-new-high-performance-tailwind-cli" target="_blank">new CLI</a> and <a href="https://blog.tailwindcss.com/just-in-time-the-next-generation-of-tailwind-css" target="_blank">JIT mode</a> and get the best out of both.
-
-    <ul>
-        <li>Blazor's <a href="https://docs.microsoft.com/en-us/aspnet/core/test/hot-reload?view=aspnetcore-6.0" targret="_blank">Hot Reload</a> plays nicely with Tailwind's incremental builds.</li>
-        <li>Using Tailwind and other PostCSS plugins (<a href="https://tailwindcss.com/docs/using-with-preprocessors#nesting" target="_blank">nesting, for instance</a>) within Scoped CSS (<code>*.razor.css</code>) files is handled.</li>
-        <li>The Tailwind installation and configuration is up to date with the new CLI and JIT experience.</li>
-    </ul>
-
-    <h3>TailBlazor Template Tweaks</h3>
-
-    Here's some highlights of the steps i take to hook up a freshly-created Blazor project with Tailwind CSS:
-
-    <ul>
-
-        <li>
-            <code>npm install -D tailwindcss@latest postcss-import</code>.  Scripts for build, watch, and publish will be added to the resulting <code>package.json</code>.
-            
-            <div class="info">
-                <code>postcss-import</code> is used to inline Scoped CSS and other custom CSS before Tailwind processes it.  Using the new CLI takes care of <code>autoprefixer</code>, <code>cssnano</code>, and <code>postcss</code> behind the scenes.
-            </div>
-        </li>
-            
-        <li>
-            <code>npx tailwindcss init --postcss</code> creates two essential config files: <code>tailwind.config.js</code> and <code>postcss.config.js</code>.  Lightly edited, not much going on.
-
-        </li>
-        <li>
-            Add <code>@("<IntermediateOutputPath>obj</IntermediateOutputPath>")</code> to the <code>csproj</code> file.
-
-            <div class="info">
-                When using Blazor's <a href="https://docs.microsoft.com/en-us/aspnet/core/blazor/components/css-isolation?view=aspnetcore-6.0" target="_blank">CSS Isolation</a>, the generated <code>.styles.css</code> file is output under <code>obj/Debug</code> or <code>obj/Release</code> by default, depending on build configuration.  Putting the above in the <code>csproj</code> gives the file a constant path to <code>@@import</code>.
-            </div>
-        </li>
-        <li>
-            Create a top-level <code>css</code> file to <a href="https://tailwindcss.com/docs/using-with-preprocessors#:~:text=Import%20our%20provided%20CSS%20files" target="_blank">import tailwind's files</a>, Blazor's generated <code>.styles.css</code> file, and any other custom CSS.
-        </li>
-            <div class="info">In <span class="font-bold">Visual Studio,</span> you can use <em>Add Existing Item...</em> on the Project or Solution to add this top-level CSS file, <code>tailwind.config.js</code>, <code>postcss.config.js</code>, and <code>package.json</code> so they're available for editing.</div>
-
-        <li>
-            Add a <code>tailwindcss.targets</code> file containing all Tailwind-specific C# build steps, referenced in the Blazor project's <code>csproj</code> file using <code>@("<Import Project=\"tailwindcss.targets\" />")</code>. <br>
-            
-            <div class="info">
-                
-                Runs a <code>tailwindcss</code> build after the Scoped CSS bundle has been generated, along with some safety checks.
-
-            </div>
-        </li>
-
-        <li>
-            Add a <code>watch.ps1</code> script file to run <code>dotnet watch</code> and <code>tailwindcss --watch</code> from the CLI.
-            
-            <div class="info">
-                
-                For <span class="font-bold">Visual Studio</span>, use <a href="https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NpmTaskRunner64" target="_blank">NPM Task Runner</a>, connecting the <code>watch</code> task defined in <code>package.json</code> to "Project Open".  (<a href="images/npm_task_runner.png" target="_blank">see here</a>)  Keep an eye on the Task, it may crash !
-            </div> 
-        </li>
-    </ul>
-    
-    <h3>Plug and Play</h3>
-    
-    For these templates, i'm using a couple handy Tailwind plugins:
-
-    <ul>
-        <li>
-        <a href="https://tailwindcss-typography.vercel.app/">tailwindcss/typography</a> for some opinionated text styling.  Note <a href="https://github.com/tailwindlabs/tailwindcss-typography/releases" target="_blank">v0.5.x+</a> is required for Tailwind CSS v3.  
-        </li>
-        <li>
-            <a href="https://github.com/jorenvanhee/tailwindcss-debug-screens" target="_blank">debug-screens</a> to add a little <code>screen: xx</code> indicator at the bottom left, making <a href="https://tailwindcss.com/docs/responsive-design" target="_blank">responsive design</a> a bit easier.
-        </li>
-    </ul>
-
-    Also in use is a nifty PostCSS plugin built into the <code>tailwindcss</code> package, <a href="https://tailwindcss.com/docs/using-with-preprocessors#nesting" target="_blank">tailwindcss/nesting</a>, which allows for sass-like nesting.
-
-    
-    <h3>More Info</h3>
-
-    Visit the <a href="https://github.com/McNerdius/TailBlazor-Templates" target="_blank">TailBlazor-Templates</a> repo to see it all put together, or <a href="https://www.tailblazor.dev" target="_blank">tailblazor.dev</a> (warning: WIP!) for more details. 😃👍
-
+<div>
+    <img class="inline py-0" src="https://img.shields.io/github/last-commit/McNerdius/TailBlazor-Templates" alt="github latest commit">
+    <img class="inline py-0" src="https://img.shields.io/github/commit-activity/m/McNerdius/TailBlazor-Templates" alt="github commit activity">
 </div>
+    
+<hr />
+
+<div class="text-3xl">
+    <span>👉</span>
+    <a href="/info" class="underline italic font-bold"> Jump to Usage Info Page</a>
+    @* <span>👈</span> *@
+</div>
+    
+<hr />
+
+<p>Currently, the TailBlazor templates project starts with default <code>dotnet new</code> templates and integrates Tailwind CSS v3.  Only two <code>npm</code> packages are needed: <code>tailwindcss</code> itself, and <code>postcss-import</code> to enable usage of Tailwind directives such as <code>@@apply</code> and Sass-like nesting in your Scoped CSS (<code>*.razor.css</code>) files.</p>
+
+<p>MSBuild targets and <code>npm</code> scripts are set up to take care of package installation, ensure proper build order, minify your CSS on publish, and pair Tailwind's incremental builds with .NET Hot Reload.  (Note that the .NET Hot Reload experience can vary for different project types - CSS updates will not always refresh the browser.  See <a href="https://github.com/dotnet/aspnetcore/issues/37496">here</a> for a workaround idea - making a component to do this is on my todo list.)</p>
+
+<p>A PowerShell a <code>watch</code> script as well as Debug/Watch launch configurations for VS Code are included by default, but can be excluded by using <code>-vsc:false</code> and/or <code>-ps1:false</code>, respectively.</p>
+
+<p>Current templates include:</p>
+
+    <div class="grid grid-cols-[20ch,auto] even:bg-slate-500 pb-8">
+        <div>template name</div><div>source template</div>
+        <div><code>tailblazor-wasm</code></div>
+        <div><code>blazorwasm</code></div>
+        <div><code>tailblazor-server</code></div>
+        <div><code>blazorserver</code></div>
+        <div><code>tailblazor-pages</code></div>
+        <div><code>razor</code> (Razor Pages)</div>
+        <div><code>tailblazor-maui</code></div>
+        <div><code>maui-blazor</code></div>
+        <div><code>tailblazor-full</code></div>
+        <div>A solution with all of the above project types, using a shared Razor Class Library for UI.</div>
+    </div>
+
+<p>There's also a WIP <code>tailblazor-hosted</code> in the repo but Hot Reload support is so broken for its source template (<code>blazorwasm --hosted</code>) i'm not including it in the template pack yet.</p>
+
+<footer class="font-mono text-right">@@ Index.razor</footer>
