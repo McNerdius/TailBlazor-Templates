@@ -79,8 +79,8 @@ ul
 
 code {
   @apply p-0 m-0 px-1 rounded-md 
-      ring-1 ring-inset ring-slate-300 dark:ring-0
-      bg-slate-100 dark:bg-slate-800;
+      ring-1 ring-inset ring-neutral-300 dark:ring-0
+      bg-neutral-100 dark:bg-neutral-700;
 }
 
 strong {
