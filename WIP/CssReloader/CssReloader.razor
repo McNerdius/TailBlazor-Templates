@@ -1,0 +1,38 @@
+@* not sure if this conditional compile syntax works, added it after removing from test project *@
+
+@{#if DEBUG} 
+
+@* 
+sauce: https://github.com/dotnet/aspnetcore/issues/37496
+usage: in MainLayout or similar, <CssReloader Stylesheet="cssfile.css" /> 
+*@
+
+<HeadContent>
+    <style id="flickerPreventerFallback"></style>
+    <link id="override" href=@Stylesheet rel="stylesheet" />
+</HeadContent>
+
+@code
+{
+    [Inject] IJSRuntime JSRuntime { get; set; }
+    [Parameter] public string Stylesheet { get; init; }
+    
+    private bool initialized = false;
+    private Task<IJSObjectReference> module;
+    private Task<IJSObjectReference> Module => module ??= JSRuntime.InvokeAsync<IJSObjectReference>( "import", "./Components/CssReloader/CssReloader.razor.js" ).AsTask();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (initialized is false)
+        {
+            var module = await Module;
+            await module.InvokeAsync<object>( "initializeCssReload" );
+
+            initialized = true;
+        }
+
+      await  base.OnInitializedAsync();
+    }
+}
+
+@{#endif}
