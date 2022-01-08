@@ -50,7 +50,7 @@
         <p>Includes three helper scripts, named using <code>dotnet</code> CLI convention: <code>build</code>, <code>publish</code>, and <code>watch</code>.  They're mostly identical, with <code>build</code> resembling <code>"npx tailwindcss --postcss postcss.config.js --config tailwind.config.js -i TailBlazorMaui.css -o ./wwwroot/css/TailBlazorMaui.min.css"</code>.</p>
         
         <ul>
-            <li><code>watch</code> adds <code>--watch</code>, enabling Tailwind's incremental builds, where CSS edits are appended rather than full rebuilds - much like .NET Hot Reload.</li>
+            <li><code>watch</code> adds <code>--watch</code>, enabling Tailwind's incremental builds, where CSS edits are appended rather than full rebuilds.</li>
     
             <li><code>publish</code> adds <code>--minify</code>, enabling <code>cssnano</code> minification of the output CSS.</li>
         </ul>
