@@ -19,9 +19,9 @@
 
 <ol>
     <li>
-        <code>RazorClassLibrary.css</code>
+        <code>TailBlazorFull.css</code>
 
-        <p>The main CSS file <code>tailwindcss</code> will be processing.  This is where you'll <code>@@import</code> any CSS you want Tailwind to process & bundle.  <strong>It includes a link to the project's CSS Isolation bundle (<code>RazorClassLibrary.styles.css</code>). Remove this if you're not using Scoped CSS (<code>*.razor.css</code>), as the <code>*.styles.css</code> bundle will not be generated, and the build will fail !</strong>  Similarly, if your project is renamed, the generated filename will change.
+        <p>The main CSS file <code>tailwindcss</code> will be processing.  This is where you'll <code>@@import</code> any CSS you want Tailwind to process & bundle.  <strong>It includes a link to the project's CSS Isolation bundle (<code>TailBlazorFull.styles.css</code>). Remove this if you're not using Scoped CSS (<code>*.razor.css</code>), as the <code>*.styles.css</code> bundle will not be generated, and the build will fail !</strong>  Similarly, if your project is renamed, the generated filename will change.
         </p>
     </li>
 
@@ -35,10 +35,10 @@
     <li>    
         <code>postcss.config.js</code>
 
-        <p>This is a list of <a href="https://github.com/postcss/postcss/blob/main/docs/architecture.md#overview" target="_blank" >PostCSS</a> plugins the <code>RazorClassLibrary.css</code> file is piped through, top-to-bottom.  The <code>tailwindcss</code> CLI will also apply <a href="https://autoprefixer.github.io/" target="_blank">Autoprefixer</a> and optionally <a href="https://cssnano.co/" target="_blank">cssnano</a> aftwerward.  <em>(The empty <code>{}</code> is where any extension-specific options/parameters would be passed, FWIW.)</em></p> 
+        <p>This is a list of <a href="https://github.com/postcss/postcss/blob/main/docs/architecture.md#overview" target="_blank" >PostCSS</a> plugins the <code>TailBlazorFull.css</code> file is piped through, top-to-bottom.  The <code>tailwindcss</code> CLI will also apply <a href="https://autoprefixer.github.io/" target="_blank">Autoprefixer</a> and optionally <a href="https://cssnano.co/" target="_blank">cssnano</a> aftwerward.  <em>(The empty <code>{}</code> is where any extension-specific options/parameters would be passed, FWIW.)</em></p> 
         
         <ul>
-            <li><code>'postcss-import': {}</code> is required to <code>@@import</code> any CSS in <code>RazorClassLibrary.css</code>.  It inlines all referenced CSS into one large string before passing it on.  See more <a href="https://tailwindcss.com/docs/using-with-preprocessors#build-time-imports" target="_blank">here</a></li> 
+            <li><code>'postcss-import': {}</code> is required to <code>@@import</code> any CSS in <code>TailBlazorFull.css</code>.  It inlines all referenced CSS into one large string before passing it on.  See more <a href="https://tailwindcss.com/docs/using-with-preprocessors#build-time-imports" target="_blank">here</a></li> 
             <li><code>'tailwindcss/nesting': {}</code> enables Sass-like nesting.  See more <a href="https://tailwindcss.com/docs/using-with-preprocessors#nesting" target="_blank">here</a>.  </li>
         </ul>
 
@@ -47,7 +47,7 @@
     <li>
         <code>package.json</code>
         
-        <p>Includes three helper scripts, named using <code>dotnet</code> CLI convention: <code>build</code>, <code>publish</code>, and <code>watch</code>.  They're mostly identical, with <code>build</code> resembling <code>"npx tailwindcss --postcss postcss.config.js --config tailwind.config.js -i RazorClassLibrary.css -o ./wwwroot/css/RazorClassLibrary.min.css"</code>.</p>
+        <p>Includes three helper scripts, named using <code>dotnet</code> CLI convention: <code>build</code>, <code>publish</code>, and <code>watch</code>.  They're mostly identical, with <code>build</code> resembling <code>"npx tailwindcss --postcss postcss.config.js --config tailwind.config.js -i TailBlazorFull.css -o ./wwwroot/css/TailBlazorFull.min.css"</code>.</p>
         
         <ul>
             <li><code>watch</code> adds <code>--watch</code>, enabling Tailwind's incremental builds, where CSS edits are appended rather than full rebuilds.</li>
@@ -68,10 +68,10 @@
         
 </ol>
 
-<h3>Additions to <code>RazorClassLibrary.csproj</code></h3>
+<h3>Additions to <code>TailBlazorFull.csproj</code></h3>
 
     <ul>
-        <li><code>@("<IntermediateOutputPath>obj</IntermediateOutputPath>")</code> removes <code>Debug</code>/<code>Release</code> from the CSS Isolation bundle's output path, so that it can be imported in <code>RazorClassLibrary.css</code> with no fuss.</li>
+        <li><code>@("<IntermediateOutputPath>obj</IntermediateOutputPath>")</code> removes <code>Debug</code>/<code>Release</code> from the CSS Isolation bundle's output path, so that it can be imported in <code>TailBlazorFull.css</code> with no fuss.</li>
         <li><code>@("<Import Project=\"tailwindcss.targets\" />")</code> enables the changes mentioned above.</li>
     </ul>
 
