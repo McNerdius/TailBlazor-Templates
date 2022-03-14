@@ -1,3 +1,13 @@
+## 2021-3-14
+
+Misc:
+
+- C# 10 more things where possible
+- Latest tailwindcss (3.0.23)
+- Update `tailwindcss.targets` files as described [here](https://github.com/McNerdius/TailBlazor/discussions/107#discussioncomment-1920484)
+
+(Projects in `WIP` have not been updated.)
+
 ## 2021-1-8
 
 Functional:
