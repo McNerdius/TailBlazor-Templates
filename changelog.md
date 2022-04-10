@@ -1,4 +1,9 @@
-## 2021-3-14
+
+## 2022-4-10
+
+- `npm audit fix` for [minimist vulnerability](https://github.com/advisories/GHSA-xvch-5gv4-984h)
+
+## 2022-3-14
 
 Misc:
 
@@ -8,7 +13,7 @@ Misc:
 
 (Projects in `WIP` have not been updated.)
 
-## 2021-1-8
+## 2022-1-8
 
 Functional:
 - Add (most) VSCode launch configs back in.
