@@ -24,7 +24,7 @@ Known issue with the WebAssembly projects(?): Sometimes a "clean" build/run will
 
 # TailBlazor-Templates
 
-.NET project templates for Blazor + Tailwind CSS v3
+.NET project templates for Blazor + Tailwind CSS v3.1
 
 the `Templates` folder is a set of [runnable project templates](https://github.com/dotnet/templating/wiki/Runnable-Project-Templates), meant to show how i integrate Tailwind CSS into Blazor projects. The template itself is a tl;dr of some of the steps taken to set the project up, and is hosted at [tailblazor.net](https://www.tailblazor.net). More details at [tailblazor.dev](https://www.tailblazor.dev).
 

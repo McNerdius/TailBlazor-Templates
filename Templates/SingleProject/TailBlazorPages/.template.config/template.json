@@ -3,7 +3,7 @@
   "author": "McNerdius",
   "shortName": "tailblazor-pages",
   "identity": "McNerdius.TailBlazor.Pages",
-  "name": "Blazor WebAssembly with Tailwind CSS v3",
+  "name": "Blazor WebAssembly with Tailwind CSS v3.1",
   "description": "Use Blazor and Tailwind 3's JIT & fast incremental builds alongside .NET Hot Reload in your Razor Pages projects.  Also enables use of Tailwind CSS functions & directives, nesting, and more in your Razor Components' Scoped CSS files.",
   "classifications": [
     "Web",
