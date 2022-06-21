@@ -11,7 +11,7 @@
         <SupportedPlatform Include="browser" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.6" />
     </ItemGroup>
     <ItemGroup>
         <Watch Remove="./wwwroot/css/TailBlazorFull.min.css" />
