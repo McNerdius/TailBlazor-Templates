@@ -1,6 +1,6 @@
 ## 2022-6-21
 
-- Latest tailwindcss (3.1.3)
+- Latest tailwindcss (3.1.4)
   - Update content text to reflect minor version change.
 - Remove `tailblazormaui` WIP project.
 - `npm audit -fix` and `npm update` and `dotnet outdated -u` things and stuff

@@ -16,7 +16,7 @@ Known issue with the WebAssembly projects(?): Sometimes a "clean" build/run will
 
 # Next up for the templates:
 
-* A lighter-weight landing page geared toward "getting started" (where ur CSS goes, troubleshooting, ...) rather than the current background/meta stuff.  The new landing page will be native to the project type (`.cshtml`,`xaml`), and the current meta info will be linked to.
+* A lighter-weight landing page geared toward "getting started" (where ur CSS goes, troubleshooting, ...) rather than the current background/meta stuff.
 * A DI setup.  Maybe some form of the "random person card" thing from the old templates.
 * ... ?
 
