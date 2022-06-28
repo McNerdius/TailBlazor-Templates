@@ -22,7 +22,7 @@ TailBlazor-Templates is an ongoing Work-In-Progress, find the latest templates <
     
 <hr />
 
-<p>Currently, the TailBlazor templates project starts with default <code>dotnet new</code> templates and integrates Tailwind CSS v3.  Only two <code>npm</code> packages are needed: <code>tailwindcss</code> itself, and <code>postcss-import</code> to enable usage of Tailwind directives such as <code>@@apply</code> and Sass-like nesting in your Scoped CSS (<code>*.razor.css</code>) files.</p>
+<p>Currently, the TailBlazor templates project starts with net6.0's default <code>dotnet new</code> templates and integrates Tailwind CSS v3.1.  Only two <code>npm</code> packages are needed: <code>tailwindcss</code> itself, and <code>postcss-import</code> to enable usage of Tailwind directives such as <code>@@apply</code> and Sass-like nesting in your Scoped CSS (<code>*.razor.css</code>) files.</p>
 
 <p>MSBuild targets and <code>npm</code> scripts are set up to take care of package installation, ensure proper build order, minify your CSS on publish, and pair Tailwind's incremental builds with .NET Hot Reload.  (Note that the .NET Hot Reload experience can vary for different project types - CSS updates will not always refresh the browser.  See <a href="https://github.com/dotnet/aspnetcore/issues/37496">here</a> for a workaround idea - making a component to do this is on my todo list.)</p>
 

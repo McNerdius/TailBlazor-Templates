@@ -1,6 +1,3 @@
-# TailBlazorMaui:
-
-As MAUI is still in preview i'll wait to include this in the bundle.  CSS doesn't auto-reload yet, but see CssReloader and the link in `CssReloader.razor`.
 
 # Hosted:
 
