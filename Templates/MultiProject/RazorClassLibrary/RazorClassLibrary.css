@@ -1,4 +1,4 @@
-@import "./obj/net6.0/scopedcss/bundle/RazorClassLibrary.styles.css";
+@import "./obj/net7.0/scopedcss/bundle/RazorClassLibrary.styles.css";
 
 #blazor-error-ui {
   background: lightyellow;
