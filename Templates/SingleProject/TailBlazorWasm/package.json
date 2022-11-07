@@ -2,7 +2,6 @@
   "name": "tailblazorwasm",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "watch": "npx tailwindcss --watch --postcss postcss.config.js --config tailwind.config.js -i TailBlazorWasm.css -o ./wwwroot/css/TailBlazorWasm.min.css",
     "build": "npx tailwindcss --postcss postcss.config.js --config tailwind.config.js -i TailBlazorWasm.css -o ./wwwroot/css/TailBlazorWasm.min.css",

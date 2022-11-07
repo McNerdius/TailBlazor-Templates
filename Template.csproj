@@ -12,7 +12,7 @@
         <Authors>McNerdius</Authors>
         <Description>A collection of Tailwind 3.1 + Blazor project templates.</Description>
         <PackageTags>blazor;tailwind;tailwindcss;template</PackageTags>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <TargetFramework>net7.0</TargetFramework>
         <IncludeContentInPack>true</IncludeContentInPack>
         <IncludeBuildOutput>false</IncludeBuildOutput>
         <ContentTargetFolders>content</ContentTargetFolders>

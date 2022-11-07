@@ -12,9 +12,6 @@ module.exports = {
             colors: {
                 'dotnet-blurple': '#512BD4',
                 'link-blue': colors.blue[500]
-            },
-            animation: {
-                'spin-slow': 'spin 7s linear infinite',
             }
         }
     },

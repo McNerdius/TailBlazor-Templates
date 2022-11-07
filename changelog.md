@@ -1,3 +1,10 @@
+## Nov 2022:
+
+- Bump to .NET 7 & Tailwind CSS 3.2
+- Content rehash: put only the most applicable content in `index.html`/`Index.razor` and link to the slightly-more-significantly rehashed `tailblazor.dev` for more info.
+- Remove the `Hosted` WIP project.  (Still need to decide what the template structure will look like long-term.)
+- 
+
 ## 2022-6-21
 
 - Latest tailwindcss (3.1.4)
