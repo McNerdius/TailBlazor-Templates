@@ -15,6 +15,5 @@ public partial class DarkSwitch : ComponentBase
     {
         var module = await Module;
         await module.InvokeAsync<object>( "toggleTheme" );
-
-    }
+    } 
 }

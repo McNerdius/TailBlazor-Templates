@@ -1,5 +1,6 @@
 *.nupkg
-local/**
+**/local/**
 **/.vs/*
-/obj/**
-/bin/**
+**/obj/**
+**/bin/**
+**/node_modules/**

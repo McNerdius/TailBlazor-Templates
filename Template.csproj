@@ -21,7 +21,7 @@
         <RepositoryType>git</RepositoryType>
     </PropertyGroup>
     <ItemGroup>
-        <Content Include="Templates\**\*;Templates\**\.gitignore" Exclude="**\bin\**;**\obj\**;**\node_modules\**;**\*.min.css" />
+        <Content Include="TailBlazorWasm\**\*;TailBlazorWasm\**\.gitignore" Exclude="**\bin\**;**\obj\**;**\node_modules\**;**\*.min.css" />
         <Compile Remove="**\*" />
     </ItemGroup>
 </Project>

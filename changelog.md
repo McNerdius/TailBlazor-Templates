@@ -1,3 +1,8 @@
+## 2023-3-21:
+
+- Scale the project back to a single Blazor WebAssembly reference template.  See readme.
+- Temporarily remove `.vscode` items.
+
 ## Nov 2022:
 
 - Bump to .NET 7 & Tailwind CSS 3.2

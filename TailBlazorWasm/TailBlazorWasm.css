@@ -1,17 +1,11 @@
 ﻿@import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import "./obj/net7.0/scopedcss/bundle/TailBlazorWasm.styles.css";
-
+@import "./obj/scopedcss/bundle/TailBlazorWasm.styles.css";
 
 html,body
 {
   @apply h-full;
-}
-
-a
-{
-  @apply text-link-blue font-semibold;
 }
 
 body
@@ -19,6 +13,11 @@ body
   @apply bg-white dark:bg-neutral-900
           text-black dark:text-white
           transition-colors duration-300 ease-in-out;
+}
+
+a
+{
+  @apply text-blue-400 font-semibold;
 }
 
 .app
@@ -53,34 +52,16 @@ h1
 h2
 {
   @apply text-[200%] font-bold
-           leading-loose;
-  
-}
-
-h3
-{
-  @apply text-[160%] font-bold
-          leading-loose;
-}
-
-ol,ul
-{
-  @apply py-6;
-}
-
-ol
-{
-  @apply list-decimal;
+         leading-loose;
 }
 
 ul
 {
-  @apply list-disc list-outside;
+  @apply py-6 list-disc list-outside;
 }
 
 strong {
   @apply font-semibold text-orange-600 italic px-1;
-
 }
 
 #blazor-error-ui {

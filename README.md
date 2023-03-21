@@ -19,19 +19,17 @@ get the template here:
 
 I hate CSS.  Blazor + Tailwind CSS was the first combo i could stick with, retain sanity, and not throw the table across the room and give up learning web development for another six months or so - the cycle i'd been in since Angular 4.
 
-It takes a bit of tinkering to integrate the two with an optimal "inner loop" that takes advantage of the best both have to offer.  All how-tos i've seen fall short of this level integration, basically showing off Tailwind CSS and... that's it.  That's likely changed by now, but not by much if the "go to" YouTube conference talk falls short.  As a noob, i feel like a jerk for even saying this, and that i have no business offering a template to a community more knowledgeable than i am.  Yet the fact remains that all tutorials and how-to videos i've seen omit what i consider to be essentials in *any* Blazor + Tailwind CSS combo.  So i put together this project for myself and the community.
+It takes a bit of tinkering to integrate the two with an optimal "inner loop" that takes advantage of the best both have to offer.  All how-tos i've seen fall short of this level integration, basically demonstrating some Tailwind CSS and... that's it.  As a noob, i feel like a jerk for even saying this, and that i have no business offering a template to a community more knowledgeable than i am.  Yet the fact remains that all tutorials and how-to videos i've seen omit what i consider to be essentials in *any* Blazor + Tailwind CSS combo.  So i put together this project for myself and the community.
 
 ---
 
 ## Fast forward
 
-All of this being said, Blazor is not the right tool for the sort of sites i'm building.  It's just too heavy.  I've moved on to learning [Lit](www.lit.dev) (how did i not hear of this ages ago ?) for these bloggy / jamstack sorts of things.
+I also hate XAML.  Steve Sanderson's [WebWindow](https://blog.stevensanderson.com/2019/11/18/2019-11-18-webwindow-a-cross-platform-webview-for-dotnet-core/) project and subsequent rumors of "Blazor Desktop" got me quite giddy for the future of Blazor.  However, "Blazor Hybrid" is a different beast entirely.  
 
-But i also hate XAML.  Steve Sanderson's [WebWindow](https://blog.stevensanderson.com/2019/11/18/2019-11-18-webwindow-a-cross-platform-webview-for-dotnet-core/) project and subsequent rumors of "Blazor Desktop" got me quite giddy for the future of Blazor.  However, "Blazor Hybrid" is a different beast entirely.
+Blazor has been great for learning, but it's not the right tool for the projects i'm working on.  It's just too heavy.  I've moved on to learning [Lit](www.lit.dev) (how did i not hear of this ages ago ?) for these bloggy / jamstack sorts of things.  So this leaves me with not much use for Blazor at the moment.  I will get back to it, to supplement Lit-based sites, and keep my eye on [Blazor United](https://www.youtube.com/watch?v=kIH_Py8ytlY).
 
-So this leaves me with not much use for Blazor at the moment.  I will get back to it, to supplement Lit-based sites, and keep my eye on [Blazor United](https://www.youtube.com/watch?v=kIH_Py8ytlY).
-
-Getting to the point: i'm trimming this project down to what it was originally: a single template based on `blazorwasm`, fully integrating the features of both Blazor and Tailwind CSS.  The differences between `blazorwasm` and `blazorserver`, etc are pretty straightforward - different paths, imports in different files, and so on.  The pieces are the same, they just go in different places.
+Getting to the point: i'm trimming this project back down to what it was originally: a single template based on `blazorwasm`, fully integrating the features of both Blazor and Tailwind CSS.  The differences between `blazorwasm` and `blazorserver`, etc are pretty straightforward - different paths, imports in different files, and so on.  The pieces are the same, they just go in different places.
 
 I will still be maintaining this template and `tailblazor.dev`, as i do enjoy and use it sometimes, and always with Tailwind CSS.
 

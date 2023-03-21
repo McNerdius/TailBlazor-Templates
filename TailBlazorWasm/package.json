@@ -1,0 +1,14 @@
+{
+  "name": "local",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npx tailwindcss --config tailwind.config.js --postcss postcss.config.js -i TailBlazorWasm.css -o ./wwwroot/css/TailBlazorWasm.min.css",
+    "watch": "npx tailwindcss --config tailwind.config.js --postcss postcss.config.js -i TailBlazorWasm.css -o ./wwwroot/css/TailBlazorWasm.min.css --watch",
+    "publish": "npx tailwindcss --config tailwind.config.js --postcss postcss.config.js -i TailBlazorWasm.css -o ./wwwroot/css/TailBlazorWasm.min.css --minify"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "tailwindcss": "^3.2.7",
+    "tailwindcss-debug-screens": "^2.2.1"
+  }
+}
