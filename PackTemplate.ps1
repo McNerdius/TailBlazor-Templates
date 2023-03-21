@@ -1,3 +1,3 @@
-dotnet new --uninstall McNerdius.TailBlazor-Templates
+dotnet new uninstall McNerdius.TailBlazorTemplates
 dotnet restore
 dotnet pack ./Template.csproj --no-build --output ./

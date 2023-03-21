@@ -10,9 +10,9 @@
         <PackageId>McNerdius.TailBlazorTemplates</PackageId>
         <Title>TailBlazor</Title>
         <Authors>McNerdius</Authors>
-        <Description>A collection of Tailwind 3.1 + Blazor project templates.</Description>
+        <Description>The default blazorwasm template adapted with full Tailwind CSS integration, including optimal tailwindcss CLI incremental JIT, nesting, and Tailwind syntax in scoped CSS files.</Description>
         <PackageTags>blazor;tailwind;tailwindcss;template</PackageTags>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <TargetFramework>net7.0</TargetFramework>
         <IncludeContentInPack>true</IncludeContentInPack>
         <IncludeBuildOutput>false</IncludeBuildOutput>
         <ContentTargetFolders>content</ContentTargetFolders>
@@ -21,7 +21,7 @@
         <RepositoryType>git</RepositoryType>
     </PropertyGroup>
     <ItemGroup>
-        <Content Include="Templates\**\*;Templates\**\.gitignore" Exclude="**\bin\**;**\obj\**;**\node_modules\**;**\*.min.css" />
+        <Content Include="TailBlazorWasm\**\*;TailBlazorWasm\**\.gitignore" Exclude="**\bin\**;**\obj\**;**\node_modules\**;**\*.min.css" />
         <Compile Remove="**\*" />
     </ItemGroup>
 </Project>

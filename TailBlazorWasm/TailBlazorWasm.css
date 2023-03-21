@@ -1,0 +1,120 @@
+﻿@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "./obj/scopedcss/bundle/TailBlazorWasm.styles.css";
+
+html,body
+{
+  @apply h-full;
+}
+
+body
+{
+  @apply bg-white dark:bg-neutral-900
+          text-black dark:text-white
+          transition-colors duration-300 ease-in-out;
+}
+
+a
+{
+  @apply text-blue-400 font-semibold;
+}
+
+.app
+{
+  @apply  m-auto pb-8 max-w-5xl 
+          pt-4 sm:pt-6 md:pt-8 lg:pt-12
+          pl-6 pr-3 sm:px-8 md:px-10
+
+          transition-[font-size,padding] duration-700 ease-in-out;
+  
+  @apply text-[14px] md:text-[16px] lg:md:text-[18px];
+}
+
+p
+{
+  @apply first-of-type:pt-6 pb-6 sm:indent-8;
+         
+  @apply leading-normal;
+}
+
+hr 
+{
+  @apply m-8 border-neutral-300;
+}
+
+h1
+{
+  @apply text-[250%] font-bold
+         leading-loose;
+}
+
+h2
+{
+  @apply text-[200%] font-bold
+         leading-loose;
+}
+
+ul
+{
+  @apply py-6 list-disc list-outside;
+}
+
+strong {
+  @apply font-semibold text-orange-600 italic px-1;
+}
+
+#blazor-error-ui {
+
+  @apply hidden fixed bottom-0 left-0 w-full z-50;
+  @apply bg-[lightyellow];
+
+  /* @apply py-3 px-5; /* closest equivalent to stock using tailwind defaults */
+  @apply py-[0.65rem] px-[1.25rem];
+  
+  box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+
+  .dismiss {
+    @apply right-3 top-2;
+    @apply absolute cursor-pointer;
+  }
+}
+
+.blazor-error-boundary
+{
+    background: url(data:image/svg+xml;base64,PHN2ZyBjbGFzcz0idy02IGgtNiIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMjAgMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNOC4yNTcgMy4wOTljLjc2NS0xLjM2IDIuNzIyLTEuMzYgMy40ODYgMGw1LjU4IDkuOTJjLjc1IDEuMzM0LS4yMTMgMi45OC0xLjc0MiAyLjk4SDQuNDJjLTEuNTMgMC0yLjQ5My0xLjY0Ni0xLjc0My0yLjk4bDUuNTgtOS45MnpNMTEgMTNhMSAxIDAgMTEtMiAwIDEgMSAwIDAxMiAwem0tMS04YTEgMSAwIDAwLTEgMXYzYTEgMSAwIDAwMiAwVjZhMSAxIDAgMDAtMS0xeiIgY2xpcC1ydWxlPSJldmVub2RkIj48L3BhdGg+PC9zdmc+)
+        no-repeat 1rem/1.8rem, #b32121;
+    
+    @apply text-white p-4 pr-16;
+
+    &:after {
+      content: "An error has occurred.";
+    }
+}
+
+.loading-progress {
+
+    @apply relative block w-[8rem] aspect-square;
+    @apply mx-auto mt-[20vh] mb-[1rem];
+
+    circle{
+      @apply fill-none stroke-neutral-200 stroke-[0.6rem];
+      @apply -rotate-90 origin-center; /* same as '50% 50%' ?   */
+        
+      &:last-child {
+            @apply stroke-blue-700;
+            stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;
+            transition: stroke-dasharray 0.05s ease-in-out;
+        }
+    }
+}
+
+.loading-progress-text {
+
+    @apply absolute text-center font-bold;
+    inset: calc(20vh + 3.25rem) 0 auto 0.2rem;
+
+    &:after {
+        content: var(--blazor-load-percentage-text, "Loading");
+    }
+}
