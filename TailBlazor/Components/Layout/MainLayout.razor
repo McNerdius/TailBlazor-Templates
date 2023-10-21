@@ -1,0 +1,40 @@
+﻿@inherits LayoutComponentBase
+
+<div class="flex flex-row h-full">
+
+    <menu class="flex flex-col w-48 bg-gradient-to-b from-violet-950 to-fuchsia-800">
+        @foreach(var item in menu)
+        {
+
+            <NavLink href=@item.link class="m-4 text-white">
+
+                <span class="active:bg-gray-600/50 flex">
+                    <span class="material-symbols-outlined w-10">@item.icon</span>
+                    <span class="m-auto flex-grow">@item.link</span>
+                </span>
+
+            </NavLink>
+        }
+    </menu>
+
+    <article class="p-4 flex-grow">
+        @Body
+    </article>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+</div>
+
+@code
+{
+    static readonly (string icon, string link)[] menu = new []
+    {
+        ("home","Home"),
+        ("exposure_plus_1","Counter"),
+        ("thermostat","Weather")
+    };
+}   
